@@ -20,7 +20,7 @@
     ], 
     "./doc/authors.rst": [], 
     "./doc/conf.py": [
-        "ssvzg7OgoHgq0W4BHZ18NMBlc2inF9vdy5LAW0zQPd2lXCsB+vHjbOWMWZyRohyJYy+3haHlU0ECUm+Jawq29Q=="
+        "0G9uF/8HIaQNUbdD6i5EMZsEDXWzIHIzLToLzzoswBksi2QBh0WYK1VBBips6Z4V3dBMSzfRh7ZwvO/FKJxqfg=="
     ], 
     "./doc/contributing.rst": [], 
     "./doc/history.rst": [], 
@@ -32,22 +32,26 @@
     "./doc/readme.rst": [], 
     "./doc/usage.rst": [], 
     "./dvlpt_requirements.txt": [
-        "fO6fLb+H0LpBIu8IaPOFk++QqzRfPt5gjVNEnvuG/DPhxPfiBGWAbYQiQJJPBKLE9Uq6Ry86dl1xpR1Gdypq8Q=="
+        "5VCiwJ35q+LLd9W2JFPFipXJTuG9EpLagqIG+TSQpa1HIIxuXROEkS+NVl6HRLlMYznq+m2HhRXBdCsrzAqI3g=="
     ], 
     "./requirements.txt": [
-        "vmiIOMqGhuXJBom/KrWFzvETfJmbSMcLkvZ6XDTcFWl7XRHJgu1tcb4eHn97TgcziEqpfD96M5qO0DV3z3S+CQ=="
+        "AWuoxM/eZa+Zy1+ouKN+Lrc/SBs640mRZm3y4E/rbAOGZuvR7CtvYjlndWAzxwLd5fQj99R6tu0YJ/9TeDcx9w=="
     ], 
     "./setup.cfg": [
-        "TdYJ0RtnknyUjVmPggFiH9jGXaDHjDarGh+cxMiUmT4qg3j/lZ4Rp4mwcisIMOj8ONhXwjPTZ6ia/O/wlLB6uQ=="
+        "S5LBpatPOqSaDNag8ho6KSrwL8i7okfO2EWo2dlmKgJN2JmcXsHoX3kSlLU0jZAO3P17qyKP2HaNNUk6Q6Vq6A=="
     ], 
     "./setup.py": [
-        "FN2NlAMJrO24AP4/AhtaV5kI3Xk/rqEZBqYjnFPtA3UcJINm99jNuXjLtlaP0PYZ+Dzlz+v2EzBBrhPEKsEKmg==", 
+        "yfu999onIzF+ZXIcuZGONCNqif5FuNG+lum4bjEpxvrgnP6Z9U5gwQY2V2LoF2NZSb1UzWvfxlX4Q1wRnXs/bQ==", 
         "6tA9s9cbDHz4mx0PGt+gMLM9HamuOYqFGjwc7LYZcM72XjiUaG0A7g6hNS+gy8cS0FyZDnf46GLNwx0mNZUs7Q=="
     ], 
     "./src/ura/__init__.py": [
         "bXi4YRtInDLkaTvGi4V/ZIZpKXGCIgIw/Qm7wX5YZ+tM5kkkAAGCzzuDhxJDzcpoWKBE1UxDj7mT+40YH1DZQA==", 
         "fIn+GWAvhWfY/9NV/Sw6VXI4UIvx1OTgGxXQ1U5+9JFQ4vhuETzkaQvz8W4M9rMDYlL0vAeRmP2p2DyMgcvb9A=="
     ], 
+    "./src/ura/api.py": [], 
+    "./src/ura/dirac_api.py": [], 
+    "./src/ura/local_api.py": [], 
+    "./src/ura/requests_api.py": [], 
     "./src/ura/version.py": [
         "9u2W46jEMEMq3ZJFhNBSDLcfV8R73vM1FPWlZz2LsxyOwW1/0fpDM16Yxig6tFhfdhNxz+Qw8gX0btUZqB898w=="
     ], 

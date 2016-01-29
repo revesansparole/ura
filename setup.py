@@ -9,7 +9,7 @@ from os.path import join as pj
 from setuptools import setup, find_packages
 
 
-short_descr = "Uniforma Resource Access"
+short_descr = "Uniforme Resource Access"
 readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 

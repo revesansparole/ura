@@ -264,7 +264,7 @@ texinfo_documents = [
      u'ura Documentation',
      u'revesansparole',
      'ura',
-     'Uniforma Resource Access',
+     'Uniforme Resource Access',
      'Miscellaneous'),
 ]
 
