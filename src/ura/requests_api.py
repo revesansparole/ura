@@ -1,5 +1,8 @@
 """This file contains the common api to access resources
 """
+import requests
+from requests.exceptions import ConnectionError, InvalidSchema
+from urllib2 import URLError
 
 
 def ls(url):
@@ -27,8 +30,12 @@ def exists(url):
     Returns:
         (Bool): True if resource is accessible
     """
-    del url
-    raise NotImplementedError
+    try:
+        resp = requests.get(url.geturl())
+    except InvalidSchema as e:
+        raise URLError(e)
+
+    return resp.status_code < 400
 
 
 def touch(url):
@@ -74,13 +81,24 @@ def read(url, binary=False):
     Returns:
         (string|ByteArray): content of the resource
     """
-    del url
-    del binary
-    raise NotImplementedError
+    try:
+        resp = requests.get(url.geturl())
+    except InvalidSchema as e:
+        raise URLError(e)
+
+    if resp.status_code >= 400:
+        raise URLError("url does not exists")
+
+    if binary:
+        return resp.content
+    else:
+        return resp.text
 
 
 def write(url, content, binary=False):
     """Write the content in a resource.
+
+    Warnings: content must be some json data
 
     Raises: IOError if resource is not accessible
 
@@ -92,7 +110,11 @@ def write(url, content, binary=False):
     Returns:
         (None)
     """
-    del url
-    del content
     del binary
-    raise NotImplementedError
+    try:
+        ret = requests.post(url.geturl(), content,
+                            headers={'content-type': 'application/json'})
+        if ret.status_code > 400:
+            raise URLError("unable to send data: %s" % ret.status_code)
+    except (ConnectionError, InvalidSchema) as e:
+        raise URLError(e)

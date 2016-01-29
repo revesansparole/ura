@@ -1,5 +1,8 @@
 """This file contains the common api to access resources
 """
+import os
+import shutil
+from urllib2 import URLError
 
 
 def ls(url):
@@ -14,8 +17,14 @@ def ls(url):
         (list of (Bool, url)): list of urls and flag set to True
                                if url is a directory like resource.
     """
-    del url
-    raise NotImplementedError
+    root = url.path
+
+    try:
+        for name in os.listdir(root):
+            pth = os.path.join(root, name)
+            yield os.path.isdir(pth), pth
+    except IOError as e:
+        raise URLError(e)
 
 
 def exists(url):
@@ -27,8 +36,7 @@ def exists(url):
     Returns:
         (Bool): True if resource is accessible
     """
-    del url
-    raise NotImplementedError
+    return os.path.exists(url.path)
 
 
 def touch(url):
@@ -43,8 +51,11 @@ def touch(url):
     Returns:
         (Bool): operation has been successful
     """
-    del url
-    raise NotImplementedError
+    try:
+        with open(url.path, 'w'):
+            os.utime(url.path, None)
+    except IOError as e:
+        raise URLError(e)
 
 
 def remove(url):
@@ -58,14 +69,19 @@ def remove(url):
     Returns:
         (Bool): operation has been successful
     """
-    del url
-    raise NotImplementedError
+    try:
+        if os.path.isdir(url.path):
+            shutil.rmtree(url.path, ignore_errors=True)
+        else:
+            os.remove(url.path)
+    except IOError as e:
+        raise URLError(e)
 
 
 def read(url, binary=False):
     """Read the content of a resource.
 
-    Raises: IOError if resource is not accessible
+    Raises: URLError if resource is not accessible
 
     Args:
         url: (urlparse.SplitResult) Resource locator
@@ -74,15 +90,22 @@ def read(url, binary=False):
     Returns:
         (string|ByteArray): content of the resource
     """
-    del url
-    del binary
-    raise NotImplementedError
+    if binary:
+        mode = 'rb'
+    else:
+        mode = 'r'
+
+    try:
+        with open(url.path, mode) as f:
+            return f.read()
+    except IOError as e:
+        raise URLError(e)
 
 
 def write(url, content, binary=False):
     """Write the content in a resource.
 
-    Raises: IOError if resource is not accessible
+    Raises: URLError if resource is not accessible
 
     Args:
         url: (urlparse.SplitResult) Resource locator
@@ -92,7 +115,13 @@ def write(url, content, binary=False):
     Returns:
         (None)
     """
-    del url
-    del content
-    del binary
-    raise NotImplementedError
+    if binary:
+        mode = 'wb'
+    else:
+        mode = 'w'
+
+    try:
+        with open(url.path, mode) as f:
+            f.write(content)
+    except IOError as e:
+        raise URLError(e)
