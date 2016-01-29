@@ -1,0 +1,49 @@
+{
+    "_pkglts": {
+        "auto_install": true, 
+        "install_front_end": "stdout", 
+        "use_prompts": false
+    }, 
+    "base": {
+        "namespace": null, 
+        "owner": "revesansparole", 
+        "pkgname": "ura", 
+        "url": null
+    }, 
+    "coverage": {}, 
+    "doc": {
+        "description": "Uniforma Resource Access", 
+        "keywords": [
+            "url", 
+            "uri", 
+            "data access"
+        ]
+    }, 
+    "github": {
+        "project": "{{key, base.pkgname}}"
+    }, 
+    "license": {
+        "name": "cecill-c", 
+        "organization": "OpenAlea", 
+        "project": "{{key, base.pkgname}}", 
+        "year": 2015
+    }, 
+    "pysetup": {
+        "author_email": "revesansparole@gmail.com", 
+        "author_name": "{{key, base.owner}}", 
+        "intended_versions": [
+            "27"
+        ]
+    }, 
+    "readthedocs": {
+        "project": "{{key, github.project}}"
+    }, 
+    "sphinx": {}, 
+    "test": {}, 
+    "travis": {}, 
+    "version": {
+        "major": 0, 
+        "minor": 1, 
+        "post": 0
+    }
+}

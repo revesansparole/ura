@@ -1,0 +1,55 @@
+{
+    "./.coveragerc": [], 
+    "./.gitignore": [
+        "+K/4XGP2Peb5jWR7nzmpli9QQT/NXtwbXHyE3BnTHOEAdwTiRpmD0k++rjO/416VXZCr7l+3j3X8YUhN+Ku0MA=="
+    ], 
+    "./.travis.yml": [
+        "FwsLpNILgu0mkWukmpkwVWxkt5nAnuz45ke0hSZ+5+PXxmxNhghqkyr5E57KHiUdCX6bB+eHu4zKw/+ORilIiw=="
+    ], 
+    "./AUTHORS.rst": [], 
+    "./CONTRIBUTING.rst": [], 
+    "./HISTORY.rst": [], 
+    "./LICENSE": [
+        "K+/cXPOoUd3kCV74oh3eAd4jEM1Zl5ycOadeYhk++UgVDTAptzaSeEuVaeT1wD8qp3mxw2UXkNVnXY9uD0bEtg=="
+    ], 
+    "./MANIFEST.in": [
+        "YTUhuNoVK2IXgwJI+cP4BUzbgzMOnHhc40N8Q9cw1rJVtKJq8xlQNaYwxt2Y8p+scpKOU4S445VaPOqWsEF6+Q=="
+    ], 
+    "./README.rst": [
+        "MV158U/quRGfTHBG3CkPFcIfXwtiMwZQenIGyC4r+BzpfgoEBn/ch4FHyXg/+cBwv+VVYm6RQTk9pBNUfSGmbQ=="
+    ], 
+    "./doc/authors.rst": [], 
+    "./doc/conf.py": [
+        "ssvzg7OgoHgq0W4BHZ18NMBlc2inF9vdy5LAW0zQPd2lXCsB+vHjbOWMWZyRohyJYy+3haHlU0ECUm+Jawq29Q=="
+    ], 
+    "./doc/contributing.rst": [], 
+    "./doc/history.rst": [], 
+    "./doc/index.rst": [], 
+    "./doc/installation.rst": [], 
+    "./doc/make.bat": [
+        "Tk/+eZHH7Ss0u6nDShjeISQZmDwP2+T79T9iaBXwWtSC2AJBYjifliRsFaupRval8lXgd0Jg4jNRMcDOC31oaw=="
+    ], 
+    "./doc/readme.rst": [], 
+    "./doc/usage.rst": [], 
+    "./dvlpt_requirements.txt": [
+        "fO6fLb+H0LpBIu8IaPOFk++QqzRfPt5gjVNEnvuG/DPhxPfiBGWAbYQiQJJPBKLE9Uq6Ry86dl1xpR1Gdypq8Q=="
+    ], 
+    "./requirements.txt": [
+        "vmiIOMqGhuXJBom/KrWFzvETfJmbSMcLkvZ6XDTcFWl7XRHJgu1tcb4eHn97TgcziEqpfD96M5qO0DV3z3S+CQ=="
+    ], 
+    "./setup.cfg": [
+        "TdYJ0RtnknyUjVmPggFiH9jGXaDHjDarGh+cxMiUmT4qg3j/lZ4Rp4mwcisIMOj8ONhXwjPTZ6ia/O/wlLB6uQ=="
+    ], 
+    "./setup.py": [
+        "FN2NlAMJrO24AP4/AhtaV5kI3Xk/rqEZBqYjnFPtA3UcJINm99jNuXjLtlaP0PYZ+Dzlz+v2EzBBrhPEKsEKmg==", 
+        "6tA9s9cbDHz4mx0PGt+gMLM9HamuOYqFGjwc7LYZcM72XjiUaG0A7g6hNS+gy8cS0FyZDnf46GLNwx0mNZUs7Q=="
+    ], 
+    "./src/ura/__init__.py": [
+        "bXi4YRtInDLkaTvGi4V/ZIZpKXGCIgIw/Qm7wX5YZ+tM5kkkAAGCzzuDhxJDzcpoWKBE1UxDj7mT+40YH1DZQA==", 
+        "fIn+GWAvhWfY/9NV/Sw6VXI4UIvx1OTgGxXQ1U5+9JFQ4vhuETzkaQvz8W4M9rMDYlL0vAeRmP2p2DyMgcvb9A=="
+    ], 
+    "./src/ura/version.py": [
+        "9u2W46jEMEMq3ZJFhNBSDLcfV8R73vM1FPWlZz2LsxyOwW1/0fpDM16Yxig6tFhfdhNxz+Qw8gX0btUZqB898w=="
+    ], 
+    "./test/__init__.py": []
+}
