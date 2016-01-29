@@ -11,7 +11,7 @@ def ls(url):
         url: (urlparse.SplitResult) Resource locator
 
     Returns:
-        (list of (Bool, url)): list of urls and flag set to True
+        (list of (url, Bool)): list of urls and flag set to True
                                if url is a directory like resource.
     """
     del url

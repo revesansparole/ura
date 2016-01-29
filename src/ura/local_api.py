@@ -14,7 +14,7 @@ def ls(url):
         url: (urlparse.SplitResult) Resource locator
 
     Returns:
-        (list of (Bool, url)): list of urls and flag set to True
+        (list of (url, Bool)): list of urls and flag set to True
                                if url is a directory like resource.
     """
     root = url.path
@@ -22,7 +22,7 @@ def ls(url):
     try:
         for name in os.listdir(root):
             pth = os.path.join(root, name)
-            yield os.path.isdir(pth), pth
+            yield pth, os.path.isdir(pth)
     except IOError as e:
         raise URLError(e)
 

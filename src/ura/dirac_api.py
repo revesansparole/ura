@@ -2,7 +2,19 @@
 """
 import os
 import shutil
+from subprocess import check_output
 from urllib2 import URLError
+
+"""
+dirac-dms-add-file <LFN> <FILE> <SE>
+dirac-dms-get-file <LFN>
+dirac-dms-remove-files <LFN>
+dirac-dms-clean-directory <LFN> <SE>
+
+dirac-dms-catalog-metadata <LFN>
+dirac-dms-lfn-metadata <LFN>
+dirac-dms-find-lfns Path=/vo.france-grilles.fr/user/j/jchopard
+"""
 
 
 def ls(url):
@@ -14,17 +26,29 @@ def ls(url):
         url: (urlparse.SplitResult) Resource locator
 
     Returns:
-        (list of (Bool, url)): list of urls and flag set to True
+        (list of (url, Bool)): list of urls and flag set to True
                                if url is a directory like resource.
     """
     root = url.path
+    res = check_output(["dirac-dms-find-lfns", "Path=%s" % root], shell=True)
 
-    try:
-        for name in os.listdir(root):
-            pth = os.path.join(root, name)
-            yield os.path.isdir(pth), pth
-    except IOError as e:
-        raise URLError(e)
+    pths = {}
+
+    for line in res.splitlines()[1:]:
+        line = line.strip()
+        if len(line) > 0:
+            print line
+            if line.startswith(root):
+                pth = line[len(root):][1:]
+                dname = os.path.dirname(pth)
+                if len(dname) > 0:
+                    pths[dname] = True
+                else:
+                    pths[pth] = False
+            else:
+                raise URLError("bad path")
+
+    return pths.items()
 
 
 def exists(url):
