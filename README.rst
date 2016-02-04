@@ -17,5 +17,5 @@ ura
 
 .. }}
 
-Uniforma Resource Access
+Uniforme Resource Access
 
