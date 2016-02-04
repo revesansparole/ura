@@ -20,10 +20,13 @@ def ls(url):
     root = url.path
 
     try:
+        ret = []
         for name in os.listdir(root):
             pth = os.path.join(root, name)
-            yield pth, os.path.isdir(pth)
-    except IOError as e:
+            ret.append((pth.replace("\\", "/"), os.path.isdir(pth)))
+
+        return ret
+    except OSError as e:
         raise URLError(e)
 
 
@@ -39,6 +42,24 @@ def exists(url):
     return os.path.exists(url.path)
 
 
+def _ensure_dir(pth):
+    """Recursively ensure that all dir in pth have been created
+
+    Args:
+        pth: (str)
+
+    Returns:
+        None
+    """
+    dpth = os.path.dirname(pth)
+    if len(dpth) == 0:
+        return
+
+    if not os.path.exists(dpth):
+        _ensure_dir(dpth)
+        os.mkdir(dpth)
+
+
 def touch(url):
     """Create a resource.
 
@@ -51,11 +72,10 @@ def touch(url):
     Returns:
         (Bool): operation has been successful
     """
-    try:
-        with open(url.path, 'w'):
-            os.utime(url.path, None)
-    except IOError as e:
-        raise URLError(e)
+    _ensure_dir(url.path)
+    with open(url.path, 'w'):
+        os.utime(url.path, None)
+    return True
 
 
 def remove(url):
@@ -74,7 +94,7 @@ def remove(url):
             shutil.rmtree(url.path, ignore_errors=True)
         else:
             os.remove(url.path)
-    except IOError as e:
+    except OSError as e:
         raise URLError(e)
 
 

@@ -1,5 +1,6 @@
 """This file contains the common api to access resources
 """
+from urllib2 import URLError
 
 
 def ls(url):
